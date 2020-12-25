@@ -1,13 +1,13 @@
 .header {
+  position: sticky;
+  top: 0;
   display: flex;
   justify-content: space-evenly;
   border-bottom: 0.1px solid lightgray;
+  background-color: white;
   padding-top: 10px;
   padding-bottom: 10px;
   width: 100%;
-  /* To make it sticky in the top */
-  position: sticky;
-  top: 0;
   z-index: 999;
 }
 .header__left {
@@ -16,19 +16,18 @@
 .header__left > img {
   object-fit: contain;
   height: 40px;
+  margin-left: 10px;
   margin-right: 10px;
 }
-
 .header__search {
-  padding: 10px;
   display: flex;
+  padding: 10px;
   align-items: center;
   border-radius: 5px;
   height: 22px;
-  color: grey;
+  color: gray;
   background-color: #eef3f8;
 }
-
 .header__search > input {
   outline: none;
   border: none;
