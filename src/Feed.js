@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Feed.css";
 import CreateIcon from "@material-ui/icons/Create";
 import InputOption from "./InputOption";
@@ -30,8 +30,13 @@ function Feed() {
           />
         </div>
       </div>
-      {/*  */}
-      <Post />
+      {/* Posts  */}
+
+      <Post
+        name="Omar Gubran"
+        descreption="Test"
+        messeage="Hello from the post"
+      />
     </div>
   );
 }
