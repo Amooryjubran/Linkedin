@@ -9,8 +9,11 @@ import CalendarViewDayIcon from "@material-ui/icons/CalendarViewDay";
 import Post from "./Post";
 import { db } from "./firebase";
 import firebase from "firebase";
-
+import { useSelector } from "react-redux";
+import { selectUser } from "./features/userSlice";
 function Feed() {
+  const user = useSelector(selectUser);
+
   const [input, setInput] = useState("");
   const [posts, setPosts] = useState([]);
 
@@ -30,10 +33,10 @@ function Feed() {
   const sendPost = (e) => {
     e.preventDefault();
     db.collection("posts").add({
-      name: "Omar Gubran",
-      descreption: "Testing",
+      name: user.displayName,
+      descreption: user.email,
       messeage: input,
-      photoUrl: "",
+      photoUrl: user.photoUrl || "", // if user doesn't have picture, empty value
       timestamp: firebase.firestore.FieldValue.serverTimestamp(),
     });
     // to make the text in the input disappear after posting
