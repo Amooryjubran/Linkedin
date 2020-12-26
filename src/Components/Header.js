@@ -8,10 +8,13 @@ import BusinessCenterIcon from "@material-ui/icons/BusinessCenter";
 import NotificationsIcon from "@material-ui/icons/Notifications";
 import ChatIcon from "@material-ui/icons/Chat";
 import { useDispatch } from "react-redux";
-import { logout } from "./features/userSlice";
-import { auth } from "./firebase";
+import { logout } from "../Features/userSlice";
+import { auth } from "../firebase";
+import { useSelector } from "react-redux";
+import { selectUser } from "../Features/userSlice";
 function Header() {
   const dispatch = useDispatch();
+  const user = useSelector(selectUser);
 
   // to logout
   const logoutOfApp = () => {
@@ -20,7 +23,7 @@ function Header() {
   };
 
   return (
-    <div className="header">
+    <div className="header" style={{ display: !user ? "none" : "" }}>
       <div className="header__left">
         <img
           src="https://www.flaticon.com/svg/static/icons/svg/174/174857.svg"
@@ -38,7 +41,7 @@ function Header() {
         <HeaderOption Icon={BusinessCenterIcon} title="Jobs" />
         <HeaderOption Icon={ChatIcon} title="Messaging" />
         <HeaderOption Icon={NotificationsIcon} title="Jobs" />
-        <HeaderOption avatar={true} title="Omar" onClick={logoutOfApp} />
+        <HeaderOption avatar={true} title="Logout" onClick={logoutOfApp} />
       </div>
     </div>
   );

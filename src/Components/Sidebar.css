@@ -16,6 +16,7 @@
   border-top-right-radius: 10px;
   background-color: white;
   padding-bottom: 10px;
+  box-shadow: 0 2px 3rem rgba(0, 0, 0, 0.1);
 }
 .sidebar__top > h4 {
   color: gray;

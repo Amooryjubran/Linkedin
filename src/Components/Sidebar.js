@@ -1,7 +1,7 @@
 import { Avatar } from "@material-ui/core";
 import React from "react";
 import { useSelector } from "react-redux";
-import { selectUser } from "./features/userSlice";
+import { selectUser } from "../Features/userSlice";
 import "./Sidebar.css";
 function Sidebar() {
   const user = useSelector(selectUser);
@@ -20,7 +20,11 @@ function Sidebar() {
           src="https://images.unsplash.com/photo-1579546929662-711aa81148cf?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80"
           alt=""
         />
-        <Avatar src={user.photoUrl} className="sidebar__avatar">
+        <Avatar
+          style={{ height: "50px", width: "50px" }}
+          src={user.photoUrl}
+          className="sidebar__avatar"
+        >
           {user.email[0]}{" "}
           {/* if user doesn't have a photo, use his first letter as his photo */}
         </Avatar>

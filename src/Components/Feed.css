@@ -3,6 +3,8 @@
   margin: 0 20px;
 }
 .feed_inputContainer {
+  box-shadow: 0 2px 3rem rgba(0, 0, 0, 0.1);
+
   background-color: white;
   padding: 10px;
   padding-bottom: 20px;
